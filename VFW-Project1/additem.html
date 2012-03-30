@@ -16,10 +16,12 @@
 		<title>Beer Buddy</title>
 	</head>
 	<body>
+		<!-- App Name -->
 		<h1>My Beer Buddy</h1>
 		<form action="#" method="post">
 			<fieldset>
 				<legend>Beer Information</legend>
+				<!-- this category menu lists the different styles of beer. -->
 				<label>Select Beer Style:</label><br/>
 				<select id="beerstlye">
 					<option value="Ale">Ale</option>
@@ -27,6 +29,7 @@
 					<option value="Wheat">Wheat</option>
 					<option value="Stout">Stout</option>
 				</select><br/>
+				<!-- this list obtains information regarding the name of the beer, the name of the brewery, alcohol content (in percent), a favorites checkbox, the date the beer was drunk, and any additional information or comments the user wishes to make -->
 				<label>Provide Additional Beer Info:</label>
 				<ul>
 					<li><label for="beername">Name of Beer: </label><input type="text" id="beername"/></li>
@@ -37,7 +40,9 @@
 					<li><label for="comments">Additional Info or Comments: </label><br/><textarea id="comments"></textarea></li>
 				</ul>
 			</fieldset>
+		<!-- The submit button. -->
 		<input type="submit" value="submit"/>
+		<!-- List containing the links that will clear the stored data and display the stored data. -->
 		<ul>
 			<li><a href="#">Clear Stored Data</a></li>
 			<li><a href="#">Display Stored Data</a></li>
