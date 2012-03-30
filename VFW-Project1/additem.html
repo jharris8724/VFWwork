@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Project Name: Web App Part 1 -->
+<!-- Student Name: Jeffrey Harris -->
+<!-- Term Number: 1204 -->
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Add Beer Info"/>
+		<meta name="keywords" content="beer list, organizer, beer app"/>
+		<meta name="robots" content="noindex, nofollow"/>
+		<meta name="viewport" content="user-scalable=no, width=device-width"/>
+		<meta name="viewport" content="target-densitydpi=devicedpi"/>
+		<meta name="HandheldFriendly" content="True"/>
+		<meta name="MobileOptimized" content="320"/>
+		
+		<title>Beer Buddy</title>
+	</head>
+	<body>
+		<h1>My Beer Buddy</h1>
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Beer Information</legend>
+				<label>Select Beer Style:</label><br/>
+				<select id="beerstlye">
+					<option value="Ale">Ale</option>
+					<option value="Lager">Lager</option>
+					<option value="Wheat">Wheat</option>
+					<option value="Stout">Stout</option>
+				</select><br/>
+				<label>Provide Additional Beer Info:</label>
+				<ul>
+					<li><label for="beername">Name of Beer: </label><input type="text" id="beername"/></li>
+					<li><label for="breweryname">Name of Brewery: </label><input type="text" id="breweryname"/></li>
+					<li><label for="alcrange">Alcohol Content (in %): </label><input type="range" id="alcrange"/></li>
+					<li><label for="dateenjoyed">Date Enjoyed (or not): </label><input type="date" min="2000-03-28" max="2100-03-28" id="dateenjoyed" name="startdate">
+					<li><label for="fav">Check to add to favorites: </label><input type="checkbox" value="addtofavorites" id="fav"/></li>
+					<li><label for="comments">Additional Info or Comments: </label><br/><textarea id="comments"></textarea></li>
+				</ul>
+			</fieldset>
+		<input type="submit" value="submit"/>
+		<ul>
+			<li><a href="#">Clear Stored Data</a></li>
+			<li><a href="#">Display Stored Data</a></li>
+		</ul>
+		</form>
+	</body>
+
+</html>
