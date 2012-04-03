@@ -20,28 +20,20 @@
 		<header><h1>Brew Book</h1></header>
 		<!-- links that will display and clear the data saved in local storage. -->
 		<nav>
-			<a href="#">Display Stored Data</a>
-			<a href="#">Clear Stored Data</a>
+			<a href="#" id="clearLink">Display Stored Data</a>
+			<a href="#" id="displayLink">Clear Stored Data</a>
 		</nav>
 		<form action="#" method="post">
 			<fieldset>
-				<legend>Beer Information</legend>
-				<!-- this category menu lists the different styles of beer. -->
-				<label for="beerstyle">Select Beer Style:</label><br/>
-				<select id="beerstlye">
-					<option value="Ale">Ale</option>
-					<option value="Lager">Lager</option>
-					<option value="Wheat">Wheat</option>
-					<option value="Stout">Stout</option>
-				</select><br/>
-				<!-- this list obtains information regarding the name of the beer, the name of the brewery, alcohol content (in percent), a favorites checkbox, the date the beer was drunk, and any additional information or comments the user wishes to make -->
-				<label>Provide Additional Beer Info:</label>
+				<legend>Beer Information</legend>			
+				<!-- this list obtains information regarding the style of beer, the name of the beer, the name of the brewery, alcohol content (in percent), a favorites checkbox, the date the beer was drunk, and any additional information or comments the user wishes to make -->
 				<ul>
+					<li id="select"><label for="beerstyle">Select Beer Style:</label><br/></li>
 					<li><label for="beername">Name of Beer: </label><input type="text" id="beername"/></li>
 					<li><label for="breweryname">Name of Brewery: </label><input type="text" id="breweryname"/></li>
 					<li><label for="alcrange">Alcohol Content (in %): </label><input type="range" id="alcrange"/></li>
 					<li><label for="dateenjoyed">Date Enjoyed (or not): </label><input type="date" min="2000-03-28" max="2100-03-28" id="dateenjoyed" name="startdate">
-					<li><label for="fav">Check to add to favorites: </label><input type="checkbox" value="addtofavorites" id="fav"/></li>
+					<li><label for="fav">Add to favorites: </label><input type="checkbox" value="addtofavorites" id="fav"/></li>
 					<li><label for="comments">Additional Info or Comments: </label><br/><textarea id="comments"></textarea></li>
 				</ul>
 			</fieldset>
