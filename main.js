@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	
 	*/
 	
-	function getCheckedValue () {
+	function getCheckboxValue () {
 		if ($("fav").checked) {
 			favoriteValue = $("fav").value;
 		}else {
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		var id = Math.floor(Math.random()*100000001);
 		//Gather up all our form field values in an object.
 		//Object properties contain array with the form label and input values
-		getCheckedValue();
+		getCheckboxValue();
 		var item = {};
 			item.beerstyle = ["Beer: ", $("beerstyles").value];
 			item.beername = ["Name of Beer: ", $("beername").value];
@@ -65,8 +65,34 @@ window.addEventListener("DOMContentLoaded", function() {
 			item.fav = ["Add to Favorites: ", favoriteValue];
 			item.comments = ["Additional Info or Comments: ", $("comments").value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string.
-		localstorage.setItem(id, JSON.stringify(item));
+		localStorage.setItem(id, JSON.stringify(item));
 		alert("Beer is saved!");
+	}
+	
+	function getData () {
+		//Write data from Local Storage to the browser.
+		var makeDiv = document.createElement("div");
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement("ul");
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		for (var i = 0, j = localStorage.length; i < j; i++) {
+			var makeLi = document.createElement("li");
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i),
+				value = localStorage.getItem(key)
+			;
+			//Convert the string from Local Storage value back to an object using JSON.parse()
+			var obj = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList);
+			for (var n in obj) {
+				var makeSubli = document.createElement("li");
+				makeSubList.appendChild(makeSubli);
+				var optSubText = obj[n][0] + " " + obj[n][1];
+				makeSubli.innerHTML = optSubText;
+			}
+		}
 	}
 	
 	//Variable defaults
@@ -76,9 +102,10 @@ window.addEventListener("DOMContentLoaded", function() {
 	addStyles();
 	
 	//Set Link & Submit Click Events
-	/*
+	
 	var displayLink = $("displayLink");
 	displayLink.addEventListener("click", getData);
+	/*
 	var clearLink = $("clearLink");
 	clearLink.addEventListener("click", clearLocal);
 	*/

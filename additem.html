@@ -13,7 +13,7 @@
 		<meta name="HandheldFriendly" content="True"/>
 		<meta name="MobileOptimized" content="320"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<title>Beer Buddy</title>
+		<title>Brew Book</title>
 	</head>
 	<body>
 		<!-- App Name -->
@@ -23,11 +23,11 @@
 			<a href="#" id="clearLink">Display Stored Data</a>
 			<a href="#" id="displayLink">Clear Stored Data</a>
 		</nav>
-		<form action="#" method="post">
-			<fieldset>
+		<form action="#" method="post" id="beerForm">
+			<fieldset id="beerFieldset">
 				<legend>Beer Information</legend>			
 				<!-- this list obtains information regarding the style of beer, the name of the beer, the name of the brewery, alcohol content (in percent), a favorites checkbox, the date the beer was drunk, and any additional information or comments the user wishes to make -->
-				<ul>
+				<ul id="beerInfo">
 					<li id="select"><label for="beerstyle">Select Beer Style:</label><br/></li>
 					<li><label for="beername">Name of Beer: </label><input type="text" id="beername"/></li>
 					<li><label for="breweryname">Name of Brewery: </label><input type="text" id="breweryname"/></li>
