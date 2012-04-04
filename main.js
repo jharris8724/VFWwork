@@ -1,4 +1,7 @@
-
+//Title: additem.html JavaScript
+//Author: Jeffrey HArris
+//Term: 1204
+//For VFW Web App Part 2
 
 
 
@@ -13,12 +16,12 @@ window.addEventListener("DOMContentLoaded", function() {
 	
 	//Create select field element and populate with options.
 	function addStyles () {
-		var formTag = document.getElementsByTagName("form"), //formTag is an array pf all the form tags.
+		var formTag = document.getElementsByTagName("form"), //formTag is an array of all the form tags.
 			selectList = $("select"),
 			makeSelect = document.createElement("select")
 		;
 			makeSelect.setAttribute("id", "beerstyles");
-		for (var i=0, j=beerStyles.length; i<j; i++) {
+		for (var i = 0, j = beerStyles.length; i < j; i++) {
 			var addOption = document.createElement("option");
 			var optText = beerStyles[i];
 			addOption.setAttribute("value", optText);
@@ -51,6 +54,26 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 	
+	function toggleControls (n) {
+		switch (n) {
+			case "on":
+				$("beerForm").style.display = "none";
+				$("clearLink").style.display = "inline";
+				$("displayLink").style.display = "none";
+				$("addNewLink").style.display = "inline";
+				break;
+			case "off":
+				$("beerForm").style.display = "block";
+				$("clearLink").style.display = "inline";
+				$("displayLink").style.display = "inline";
+				$("addNewLink").style.display = "none";
+				$("items").style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
+	
 	function storeData () {
 		var id = Math.floor(Math.random()*100000001);
 		//Gather up all our form field values in an object.
@@ -70,12 +93,17 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 	
 	function getData () {
+		toggleControls("on");
+		if (localStorage.length === 0) {
+			alert("There is no data in local storage!");
+		}
 		//Write data from Local Storage to the browser.
 		var makeDiv = document.createElement("div");
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement("ul");
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
+		$("items").style.display = "block";
 		for (var i = 0, j = localStorage.length; i < j; i++) {
 			var makeLi = document.createElement("li");
 			makeList.appendChild(makeLi);
@@ -95,6 +123,17 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 	
+	function clearLocal () {
+		if (localStorage.length === 0) {
+			alert("There is no data to clear.")
+		}else {
+			localStorage.clear();
+			alert("All beer information has been deleted!");
+			window.location.reload();
+			return false;
+		}
+	}
+	
 	//Variable defaults
 	var beerStyles = ["--Choose a Beer Style--", "Ale", "Lager", "Wheat", "Stout"],
 		favoriteValue = "No"
@@ -102,13 +141,12 @@ window.addEventListener("DOMContentLoaded", function() {
 	addStyles();
 	
 	//Set Link & Submit Click Events
-	
 	var displayLink = $("displayLink");
 	displayLink.addEventListener("click", getData);
-	/*
+	
 	var clearLink = $("clearLink");
 	clearLink.addEventListener("click", clearLocal);
-	*/
+	
 	var saveBeer = $("submit");
 	saveBeer.addEventListener("click", storeData);
 });
