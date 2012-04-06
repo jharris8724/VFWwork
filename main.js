@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		//Object properties contain array with the form label and input values
 		getCheckboxValue();
 		var item = {};
-			item.beerstyle = ["Beer: ", $("beerstyles").value];
+			item.beerstyle = ["Beer Style: ", $("beerstyles").value];
 			item.beername = ["Name of Beer: ", $("beername").value];
 			item.breweryname = ["Name of Brewey: ", $("breweryname").value];
 			item.alcrange = ["Alcohol Range (in %): ", $("alcrange").value];

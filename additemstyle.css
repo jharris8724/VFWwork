@@ -1,0 +1,28 @@
+/*
+Title: additem.html Styles
+Author: Jeffrey Harris
+Term: 1204
+For: VFW Web App Part 2
+*/
+
+
+h1 {
+    padding-left: 25%;
+    text-shadow: brown 0.1em 0.1em 0.2em;
+}
+
+a {
+    margin-left: 15px;
+}
+
+body {
+    background-color: #E8FAD2;
+}
+
+label {
+    text-shadow: brown 0.1em 0.1em 0.2em;
+}
+
+div {
+    margin-left: 115px;
+}

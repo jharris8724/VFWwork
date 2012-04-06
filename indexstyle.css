@@ -1,7 +1,35 @@
 /*
-Title: additem.html Styles
+Title: index.html Styles
 Author: Jeffrey Harris
 Term: 1204
 For: VFW Web App Part 2
 */
+
+
+h1 {
+    padding-left: 25%;
+    color: #FFD700;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+body {
+    background-color: #8B4513;
+    overflow: scroll;
+}
+
+p {
+    font-weight: bold;
+    font-family: lucida, "Times New Roman", Times;
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #E8FAD2;
+    border: 3px dotted black;
+    text-align: center;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+a {
+    color: #FFD700;
+    margin: 100px;
+}
 
