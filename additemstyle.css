@@ -2,7 +2,7 @@
 Title: additem.html Styles
 Author: Jeffrey Harris
 Term: 1204
-For: VFW Web App Part 2
+For: VFW Web App Part 3
 */
 
 
@@ -23,6 +23,8 @@ label {
     text-shadow: brown 0.1em 0.1em 0.2em;
 }
 
+/*
 div {
     margin-left: 115px;
 }
+*/
